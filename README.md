@@ -1,4 +1,4 @@
-# generator-megadraft-plugin [![NPM version][npm-image]][npm-url] [![Build Status] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-megadraft-plugin [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Plugin generator for the [Megadraft Editor][megadraft]
 
 This generator can be used to create a nodejs package containing a plugin for the
