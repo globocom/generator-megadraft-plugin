@@ -39,6 +39,8 @@
     "extends": "xo-space"
   },
   "repository": "https://github.com/globocom/generator-megadraft-plugin",
-  "scripts": {},
+  "scripts": {
+    "lint": "gulp lint"
+  },
   "license": "MIT"
 }

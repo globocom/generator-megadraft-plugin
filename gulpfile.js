@@ -3,7 +3,7 @@ var gulp = require("gulp");
 var eslint = require("gulp-eslint");
 var excludeGitignore = require("gulp-exclude-gitignore");
 
-gulp.task("static", function () {
+gulp.task("lint", function () {
   return gulp.src("**/*.js")
     .pipe(excludeGitignore())
     .pipe(eslint({useEslintrc: true}))
@@ -11,4 +11,4 @@ gulp.task("static", function () {
     .pipe(eslint.failAfterError());
 });
 
-gulp.task("default", ["static"]);
+gulp.task("default", ["lint"]);
