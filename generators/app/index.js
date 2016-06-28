@@ -105,6 +105,10 @@ module.exports = yeoman.Base.extend({
       this.destinationPath("babelrc"),
       this.destinationPath(".babelrc")
     );
+    this.fs.move(
+      this.destinationPath("eslintrc"),
+      this.destinationPath(".eslintrc")
+    );
   },
 
   install: function () {
