@@ -101,6 +101,10 @@ module.exports = yeoman.Base.extend({
       this.destinationPath("_package.json"),
       this.destinationPath("package.json")
     );
+    this.fs.move(
+      this.destinationPath("babelrc"),
+      this.destinationPath(".babelrc")
+    );
   },
 
   install: function () {
