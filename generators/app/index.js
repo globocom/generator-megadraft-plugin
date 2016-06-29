@@ -18,6 +18,11 @@ function ensureHttpPrefix(url) {
   return true;
 }
 
+function isRequired(str) {
+  return str.trim().length > 0;
+}
+
+
 module.exports = yeoman.Base.extend({
   prompting: function () {
     // Have Yeoman greet the user.
@@ -30,7 +35,8 @@ module.exports = yeoman.Base.extend({
         type: "input",
         name: "pluginName",
         message: "What's the plugin display name?",
-        default: this.appname
+        default: this.appname,
+        validate: isRequired
       },
       {
         type: "input",
@@ -38,12 +44,14 @@ module.exports = yeoman.Base.extend({
         message: "What's the package name?",
         default: function (props) {
           return _.kebabCase(props.pluginName);
-        }
+        },
+        validate: isRequired
       },
       {
         type: "input",
         name: "authorName",
-        message: "What's the package author name?"
+        message: "What's the package author name?",
+        validate: isRequired
       },
       {
         type: "input",
