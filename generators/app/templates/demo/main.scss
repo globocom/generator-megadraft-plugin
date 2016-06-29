@@ -1,5 +1,5 @@
 /*
- * Copyright (c) <%= info.year %>, <%= inputs.authorName %> (<%= inputs.authorEmail || inputs.homepage %>)
+ * Copyright (c) <%= info.year %>, <%- info.copyrightHolder %>
  *
  * License: MIT
  */

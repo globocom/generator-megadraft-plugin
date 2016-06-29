@@ -85,11 +85,18 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
+    var copyrightHolder = this.inputs.authorName;
+    if (this.inputs.authorEmail) {
+      copyrightHolder += " <" + this.inputs.authorEmail + ">";
+    } else {
+      copyrightHolder += " (" + this.inputs.homepage + ")";
+    }
     var today = new Date();
     var context = {
       inputs: this.inputs,
       info: {
-        year: today.getFullYear()
+        year: today.getFullYear(),
+        copyrightHolder: copyrightHolder
       }
     };
     this.fs.copyTpl(
