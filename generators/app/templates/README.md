@@ -27,8 +27,10 @@ Install, run, test.
 ```
 # Install npm dependencies
 make setup
+
 # Gulp dev-server task with webpack + sass running on http://localhost:8080/
 make run
+
 # Run mocha tests + eslint
 make test
 ```
