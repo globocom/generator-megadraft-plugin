@@ -20,6 +20,7 @@ class Demo extends React.Component {
     this.state = {
       content: editorStateFromRaw(INITIAL_CONTENT)
     };
+    this.onChange = ::this.onChange;
   }
 
   onChange(content) {
@@ -35,7 +36,7 @@ class Demo extends React.Component {
           </header>
 
           <div className="editor">
-            <Megadraft plugins={[plugin]} editorState={this.state.content} onChange={::this.onChange} />
+            <Megadraft plugins={[plugin]} editorState={this.state.content} onChange={this.onChange} />
           </div>
         </div>
     );
