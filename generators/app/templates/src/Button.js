@@ -8,7 +8,7 @@ import React, {Component} from "react";
 import {DraftJS} from "megadraft";
 
 import Icon from "./icon.js";
-import {PLUGIN_TYPE} from "./constants";
+import constants from "./constants";
 
 
 export default class Button extends Component {
@@ -21,7 +21,7 @@ export default class Button extends Component {
     const data = {
       caption: "Initial plugin text"
     };
-    const entityKey = DraftJS.Entity.create(PLUGIN_TYPE, "IMMUTABLE", data);
+    const entityKey = DraftJS.Entity.create(constants.PLUGIN_TYPE, "IMMUTABLE", data);
 
     this.props.onChange(DraftJS.AtomicBlockUtils.insertAtomicBlock(
       this.props.editorState,
