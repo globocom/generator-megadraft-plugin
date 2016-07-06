@@ -19,12 +19,6 @@ export default class Block extends Component {
     this._handleCaptionChange = ::this._handleCaptionChange;
     this._handleEdit = ::this._handleEdit;
 
-    this.defaultFeatured = "medium";
-    this.featuredOptions = [
-      {"key": "small", "icon": MegadraftIcons.MediaSmallIcon, "label": "SMALL"},
-      {"key": "medium", "icon": MegadraftIcons.MediaMediumIcon, "label": "MEDIUM"},
-      {"key": "big", "icon": MegadraftIcons.MediaBigIcon, "label": "BIG"}
-    ];
     this.actions = [
       {"key": "edit", "icon": MegadraftIcons.EditIcon, "action": this._handleEdit},
       {"key": "delete", "icon": MegadraftIcons.DeleteIcon, "action": this.props.container.remove}
@@ -41,7 +35,7 @@ export default class Block extends Component {
 
   render(){
     return (
-      <CommonBlock {...this.props} featuredOptions={this.featuredOptions} actions={this.actions} defaultFeatured={this.defaultFeatured}>
+      <CommonBlock {...this.props} actions={this.actions}>
         <BlockContent>
           <pre>{this.props.data.caption || "- NO TEXT -"}</pre>
         </BlockContent>

@@ -22,6 +22,7 @@ describe("Block", function () {
     this.setReadOnly = sinon.spy();
     this.updateEntity = sinon.spy();
     this.remove = sinon.spy();
+    this.plugin = sinon.spy();
 
     this.wrapper = TestUtils.renderIntoDocument(
       <Block container={this} blockProps={this} data={this.data} />
