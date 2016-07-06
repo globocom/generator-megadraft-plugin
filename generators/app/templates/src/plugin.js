@@ -6,10 +6,10 @@
 
 import Button from "./Button";
 import Block from "./Block";
-import {PLUGIN_TYPE} from "./constants";
+import constants from "./constants";
 
 export default {
-  type: PLUGIN_TYPE,
+  type: constants.PLUGIN_TYPE,
   buttonComponent: Button,
   blockComponent: Block
 };
