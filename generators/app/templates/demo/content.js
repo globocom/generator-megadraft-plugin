@@ -4,12 +4,12 @@
  * License: MIT
  */
 
-import {PLUGIN_TYPE} from "../src/constants";
+import constants from "../src/constants";
 
 export default {
   entityMap: {
     "0": {
-      type: PLUGIN_TYPE,
+      type: constants.PLUGIN_TYPE,
       mutability: "IMMUTABLE",
       data: {
         caption: "Plugin caption"
