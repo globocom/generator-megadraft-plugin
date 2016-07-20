@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2016, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */
+
 "use strict";
 var gulp = require("gulp");
 var eslint = require("gulp-eslint");
