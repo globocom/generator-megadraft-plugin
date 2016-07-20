@@ -4,8 +4,7 @@
   "description": "Base plugin for the Megadraft Editor",
   "homepage": "https://github.com/globocom/generator-megadraft-plugin",
   "author": {
-    "name": "Enrico",
-    "email": "rico.bl@gmail.com",
+    "name": "Globo.com",
     "url": "https://github.com/globocom/"
   },
   "files": [
