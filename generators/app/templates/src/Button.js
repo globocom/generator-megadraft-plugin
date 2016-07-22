@@ -9,6 +9,7 @@ import {DraftJS} from "megadraft";
 
 import Icon from "./icon.js";
 import constants from "./constants";
+import {insertMediaBlock} from "megadraft";
 
 
 export default class Button extends Component {
@@ -21,13 +22,8 @@ export default class Button extends Component {
     const data = {
       caption: "Initial plugin text"
     };
-    const entityKey = DraftJS.Entity.create(constants.PLUGIN_TYPE, "IMMUTABLE", data);
 
-    this.props.onChange(DraftJS.AtomicBlockUtils.insertAtomicBlock(
-      this.props.editorState,
-      entityKey,
-      "*"
-    ));
+    insertMediaBlock(this.props.editorState, constants.PLUGIN_TYPE, data);
   }
 
   render() {
