@@ -1,6 +1,6 @@
 {
   "name": "generator-megadraft-plugin",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Base plugin for the Megadraft Editor",
   "homepage": "https://github.com/globocom/generator-megadraft-plugin",
   "author": {
