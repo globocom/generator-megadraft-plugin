@@ -16,8 +16,8 @@ export default {
   buttonComponent: Button,
   blockComponent: Block,
   options: {
-    defaultFeatured: "medium",
-    featuredOptions: [
+    defaultDisplay: "medium",
+    displayOptions: [
       {"key": "small", "icon": MegadraftIcons.MediaSmallIcon, "label": "SMALL"},
       {"key": "medium", "icon": MegadraftIcons.MediaMediumIcon, "label": "MEDIUM"},
       {"key": "big", "icon": MegadraftIcons.MediaBigIcon, "label": "BIG"}
