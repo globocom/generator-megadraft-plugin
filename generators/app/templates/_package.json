@@ -4,9 +4,9 @@
   "description": "<%= inputs.pluginName %>",
   "main": "lib/plugin.js",
   "dependencies": {
+    "megadraft": "^0.2.0",
     "react": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "megadraft": "^0.1.4"
+    "react-dom": "^15.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
@@ -35,8 +35,7 @@
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },
-  "peerDependencies": {
-  },
+  "peerDependencies": {},
   "scripts": {
     "start": "gulp dev-server",
     "test": "mocha --opts mocha.opts",

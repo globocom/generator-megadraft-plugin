@@ -8,13 +8,6 @@ import constants from "../src/constants";
 
 export default {
   entityMap: {
-    "0": {
-      type: constants.PLUGIN_TYPE,
-      mutability: "IMMUTABLE",
-      data: {
-        caption: "Plugin caption"
-      }
-    }
   },
   blocks: [
     {
@@ -27,17 +20,15 @@ export default {
     },
     {
       key: "9vgd",
-      text: "*",
       type: "atomic",
       depth: 0,
       inlineStyleRanges: [],
-      entityRanges: [
-        {
-          offset: 0,
-          length: 1,
-          key: 0
-        }
-      ]
+      text: "",
+      data: {
+        type: constants.PLUGIN_TYPE,
+        caption: "Plugin caption"
+      },
+      entityRanges: []
     }
   ]
 };

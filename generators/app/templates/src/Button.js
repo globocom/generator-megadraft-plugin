@@ -5,11 +5,10 @@
  */
 
 import React, {Component} from "react";
-import {DraftJS} from "megadraft";
 
 import Icon from "./icon.js";
 import constants from "./constants";
-import {insertMediaBlock} from "megadraft";
+import {insertDataBlock} from "megadraft";
 
 
 export default class Button extends Component {
@@ -20,10 +19,11 @@ export default class Button extends Component {
 
   onClick(e) {
     const data = {
+      type: constants.PLUGIN_TYPE,
       caption: "Initial plugin text"
     };
 
-    insertMediaBlock(this.props.editorState, constants.PLUGIN_TYPE, data);
+    this.props.onChange(insertDataBlock(this.props.editorState, data));
   }
 
   render() {
