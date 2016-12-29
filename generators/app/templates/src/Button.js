@@ -28,7 +28,7 @@ export default class Button extends Component {
 
   render() {
     return (
-      <button className={this.props.className} type="button" onClick={this.onClick}>
+      <button className={this.props.className} type="button" onClick={this.onClick} title={constants.PLUGIN_NAME}>
         <Icon className="sidemenu__button__icon" />
       </button>
     );
