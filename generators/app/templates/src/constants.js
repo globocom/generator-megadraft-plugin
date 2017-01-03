@@ -5,6 +5,6 @@
  */
 
 export default {
-  PLUGIN_NAME: "<%= inputs.pluginName %>"
+  PLUGIN_NAME: "<%= inputs.pluginName %>",
   PLUGIN_TYPE: "<%= inputs.packageName %>"
 };
