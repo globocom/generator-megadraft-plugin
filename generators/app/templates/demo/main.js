@@ -6,7 +6,7 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import Megadraft from "megadraft";
+import {MegadraftEditor} from "megadraft";
 import {editorStateFromRaw} from "megadraft/lib/utils";
 
 import plugin from "../src/plugin";
@@ -36,7 +36,7 @@ class Demo extends React.Component {
           </header>
 
           <div className="editor">
-            <Megadraft plugins={[plugin]} editorState={this.state.content} onChange={this.onChange} />
+            <MegadraftEditor plugins={[plugin]} editorState={this.state.content} onChange={this.onChange} />
           </div>
         </div>
     );
