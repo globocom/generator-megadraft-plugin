@@ -20,7 +20,7 @@ describe("Block", function () {
     };
 
     this.setReadOnly = sinon.spy();
-    this.updateEntity = sinon.spy();
+    this.updateData = sinon.spy();
     this.remove = sinon.spy();
     this.plugin = sinon.spy();
 
@@ -38,7 +38,7 @@ describe("Block", function () {
   it("updates entity on caption change", function () {
     this.caption.value = "new caption";
     TestUtils.Simulate.change(this.caption);
-    expect(this.updateEntity.calledWith({caption: "new caption"})).to.be.true;
+    expect(this.updateData.calledWith({caption: "new caption"})).to.be.true;
   });
 
   it("your tests here...", function () {
