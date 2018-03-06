@@ -9,7 +9,7 @@ module.exports = {
     "."
   ],
   output: {
-    path: "./dist",
+    path: __dirname + "/dist",
     publicPath: "/dist/",
     filename: "<%= inputs.packageName %>.js",
     library: "<%= inputs.packageName %>",
@@ -29,11 +29,11 @@ module.exports = {
     loaders: [
       {
         exclude: /node_modules/,
-        loader: "babel"
+        loader: "babel-loader"
       },
       {
         test: /\.json$/,
-        loader: "json"
+        loader: "json-loader"
       }
     ]
   }

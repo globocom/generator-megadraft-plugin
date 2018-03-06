@@ -4,9 +4,9 @@
   "description": "<%= inputs.pluginName %>",
   "main": "lib/plugin.js",
   "dependencies": {
-    "megadraft": "^0.4.26",
-    "react": "15.2.1",
-    "react-dom": "15.2.1"
+    "megadraft": "^0.4.35",
+    "react": "16.1.1",
+    "react-dom": "16.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
@@ -32,8 +32,8 @@
     "rimraf": "^2.5.2",
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0",
-    "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1"
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
   },
   "peerDependencies": {},
   "scripts": {
