@@ -5,43 +5,47 @@
  */
 
 import React from "react";
-import TestUtils from "react-addons-test-utils";
-import chai from "chai";
-import sinon from "sinon";
+import {mount} from "enzyme";
 
 import Block from "../src/Block";
 
-let expect = chai.expect;
-
 describe("Block", function () {
+  let caption, updateData, data;
+
   beforeEach(function () {
-    this.data = {
+    data = {
       caption: "media caption"
     };
+    updateData = jest.fn();
+    const container = {
+      updateData,
+      setReadOnly: jest.fn(),
+      remove: jest.fn(),
+      plugin: jest.fn()
+    };
 
-    this.setReadOnly = sinon.spy();
-    this.updateData = sinon.spy();
-    this.remove = sinon.spy();
-    this.plugin = sinon.spy();
-
-    this.wrapper = TestUtils.renderIntoDocument(
-      <Block container={this} blockProps={this} data={this.data} />
+    const wrapper = mount(
+      <Block container={container} blockProps={container} data={data} />
     );
 
-    this.caption = TestUtils.scryRenderedDOMComponentsWithTag(this.wrapper, "input")[0];
+    caption = wrapper.find("BlockInput");
   });
 
+
   it("renders caption from data", function () {
-    expect(this.caption.value).to.be.equal(this.data.caption);
+    expect(caption.prop("value")).toEqual(data.caption);
   });
 
   it("updates entity on caption change", function () {
-    this.caption.value = "new caption";
-    TestUtils.Simulate.change(this.caption);
-    expect(this.updateData.calledWith({caption: "new caption"})).to.be.true;
+    caption.props().onChange({
+      target: {
+        value: "new caption"
+      }
+    });
+    expect(updateData).toBeCalledWith({caption: "new caption"});
   });
 
   it("your tests here...", function () {
-    expect(true).to.be.false;
+    expect(true).toBeFalsy();
   });
 });
