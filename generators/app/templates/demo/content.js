@@ -7,8 +7,7 @@
 import constants from "../src/constants";
 
 export default {
-  entityMap: {
-  },
+  entityMap: {},
   blocks: [
     {
       key: "ag6qs",

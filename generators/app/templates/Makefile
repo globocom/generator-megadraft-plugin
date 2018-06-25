@@ -8,6 +8,9 @@ setup:
 run:
 	@${PKG_MANAGER} run start
 
+coverage:
+	@${PKG_MANAGER} run coverage
+
 unit:
 	@rm -rf coverage
 	@${PKG_MANAGER} run -s test

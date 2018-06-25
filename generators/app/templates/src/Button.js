@@ -4,12 +4,11 @@
  * License: MIT
  */
 
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 import Icon from "./icon.js";
 import constants from "./constants";
-import {insertDataBlock} from "megadraft";
-
+import { insertDataBlock } from "megadraft";
 
 export default class Button extends Component {
   constructor(props) {
@@ -28,7 +27,12 @@ export default class Button extends Component {
 
   render() {
     return (
-      <button className={this.props.className} type="button" onClick={this.onClick} title={constants.PLUGIN_NAME}>
+      <button
+        className={this.props.className}
+        type="button"
+        onClick={this.onClick}
+        title={constants.PLUGIN_NAME}
+      >
         <Icon className="sidemenu__button__icon" />
       </button>
     );

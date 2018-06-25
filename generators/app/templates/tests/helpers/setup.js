@@ -21,7 +21,7 @@ global.self = global;
  * Gotten from: http://jaketrent.com/post/testing-react-with-jsdom/
  * @param  {object} window: The fake window, build by jsdom
  */
-((window) => {
+(window => {
   for (let key in window) {
     if (!window.hasOwnProperty(key)) {
       continue;
