@@ -5,14 +5,14 @@
  */
 
 import React from "react";
-import {mount} from "enzyme";
+import { mount } from "enzyme";
 
 import Block from "../src/Block";
 
-describe("Block", function () {
+describe("Block", function() {
   let caption, updateData, data;
 
-  beforeEach(function () {
+  beforeEach(function() {
     data = {
       caption: "media caption"
     };
@@ -31,21 +31,20 @@ describe("Block", function () {
     caption = wrapper.find("BlockInput");
   });
 
-
-  it("renders caption from data", function () {
+  it("renders caption from data", function() {
     expect(caption.prop("value")).toEqual(data.caption);
   });
 
-  it("updates entity on caption change", function () {
+  it("updates entity on caption change", function() {
     caption.props().onChange({
       target: {
         value: "new caption"
       }
     });
-    expect(updateData).toBeCalledWith({caption: "new caption"});
+    expect(updateData).toBeCalledWith({ caption: "new caption" });
   });
 
-  it("your tests here...", function () {
+  it("your tests here...", function() {
     expect(true).toBeFalsy();
   });
 });

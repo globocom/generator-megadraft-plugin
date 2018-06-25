@@ -6,13 +6,12 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import {MegadraftEditor} from "megadraft";
-import {editorStateFromRaw} from "megadraft/lib/utils";
+import { MegadraftEditor } from "megadraft";
+import { editorStateFromRaw } from "megadraft/lib/utils";
 
 import plugin from "../src/plugin";
 
 import INITIAL_CONTENT from "./content";
-
 
 class Demo extends React.Component {
   constructor(props) {
@@ -24,21 +23,25 @@ class Demo extends React.Component {
   }
 
   onChange(content) {
-    this.setState({content});
+    this.setState({ content });
   }
 
   render() {
     const pluginName = "<%= inputs.pluginName %>";
     return (
-        <div className="content">
-          <header>
-            <h1>{pluginName} - Megadraft Plugin</h1>
-          </header>
+      <div className="content">
+        <header>
+          <h1>{pluginName} - Megadraft Plugin</h1>
+        </header>
 
-          <div className="editor">
-            <MegadraftEditor plugins={[plugin]} editorState={this.state.content} onChange={this.onChange} />
-          </div>
+        <div className="editor">
+          <MegadraftEditor
+            plugins={[plugin]}
+            editorState={this.state.content}
+            onChange={this.onChange}
+          />
         </div>
+      </div>
     );
   }
 }
