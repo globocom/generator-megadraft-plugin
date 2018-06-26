@@ -29,6 +29,14 @@ export default {
         caption: "Plugin caption"
       },
       entityRanges: []
+    },
+    {
+      key: "6dge",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [],
+      text: "",
+      entityRanges: []
     }
   ]
 };
