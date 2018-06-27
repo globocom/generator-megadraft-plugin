@@ -5,7 +5,7 @@
  */
 
 "use strict";
-var yeoman = require("yeoman-generator");
+var Generator = require("yeoman-generator");
 var chalk = require("chalk");
 var yosay = require("yosay");
 var _ = require("lodash");
@@ -23,8 +23,8 @@ function isRequired(str) {
 }
 
 
-module.exports = yeoman.Base.extend({
-  prompting: function () {
+module.exports = class extends Generator {
+  prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
       "Welcome to the beautiful " + chalk.red("megadraft-plugin") + " generator!"
@@ -90,9 +90,9 @@ module.exports = yeoman.Base.extend({
       // To access props later use this.props.someAnswer;
       this.inputs = props;
     }.bind(this));
-  },
+  }
 
-  writing: function () {
+  writing() {
     var copyrightHolder = this.inputs.authorName;
     if (this.inputs.authorEmail) {
       copyrightHolder += " <" + this.inputs.authorEmail + ">";
@@ -124,9 +124,9 @@ module.exports = yeoman.Base.extend({
       this.destinationPath("eslintrc"),
       this.destinationPath(".eslintrc")
     );
-  },
+  }
 
-  install: function () {
+  install() {
     this.installDependencies();
   }
-});
+};
