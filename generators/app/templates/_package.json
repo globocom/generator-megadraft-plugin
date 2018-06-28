@@ -4,7 +4,7 @@
   "description": "<%= inputs.pluginName %>",
   "main": "lib/plugin.js",
   "dependencies": {
-    "megadraft": "^0.4.35",
+    "megadraft": "^0.4.37",
     "react": "16.4.1",
     "react-dom": "16.4.1"
   },
