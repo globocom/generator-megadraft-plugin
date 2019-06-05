@@ -6,44 +6,39 @@
 
 var gulp = require("gulp");
 var gutil = require("gulp-util");
-var sass = require("gulp-sass");
+var gulpSass = require("gulp-sass");
 var autoprefixer = require("gulp-autoprefixer");
 var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var webpackConfig = require("./webpack.config.demo.js");
 
-// The development server (the recommended option for development)
-gulp.task("default", ["dev-server"]);
-
-gulp.task("sass", function() {
+function sass(done) {
   return gulp
     .src("./src/styles/**/*.scss")
-    .pipe(sass.sync({ outputStyle: "expanded" }).on("error", sass.logError))
+    .pipe(gulpSass.sync({ outputStyle: "expanded" }).on("error", gulpSass.logError))
     .pipe(autoprefixer())
     .pipe(gulp.dest("./dist/css"));
-});
+}
 
-gulp.task("demo-sass", function() {
+function demoSass() {
   return gulp
     .src("./demo/main.scss")
-    .pipe(sass.sync().on("error", sass.logError))
+    .pipe(gulpSass.sync().on("error", gulpSass.logError))
     .pipe(autoprefixer())
     .pipe(gulp.dest("./demo"));
-});
+}
 
-gulp.task("demo-watch", function() {
-  gulp.watch("./src/styles/**/*.scss", ["demo-sass"]);
-  gulp.watch("./demo/main.scss", ["demo-sass"]);
-});
+function demoWatch() {
+  gulp.watch("./src/styles/**/*.scss", demoSass);
+  gulp.watch("./demo/main.scss", demoSass);
+}
 
-gulp.task("build", function(callback) {
-  gulp.start("sass");
-});
+function build(callback) {
+  gulp.start(sass);
+}
 
-gulp.task("dev-server", function(callback) {
-  gulp.start("demo-sass");
-  gulp.start("demo-watch");
 
+const devServer = gulp.parallel([demoSass, demoWatch], function devServer() {
   new WebpackDevServer(webpack(webpackConfig), {
     stats: { colors: true }
   }).listen(8080, "localhost", function(err) {
@@ -52,3 +47,13 @@ gulp.task("dev-server", function(callback) {
     }
   });
 });
+
+
+exports.sass = sass;
+exports.build = build;
+exports["dev-server"] = devServer;
+exports["demo-sass"] = demoSass;
+exports["demo-watch"] = demoWatch;
+
+// The development server (the recommended option for development)
+exports.default = devServer;

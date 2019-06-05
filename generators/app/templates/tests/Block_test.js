@@ -41,7 +41,7 @@ describe("Block", function() {
         value: "new caption"
       }
     });
-    expect(updateData).toBeCalledWith({ caption: "new caption" });
+    expect(updateData).toHaveBeenCalledWith({ caption: "new caption" });
   });
 
   it("your tests here...", function() {

@@ -9,12 +9,13 @@ var gulp = require("gulp");
 var eslint = require("gulp-eslint");
 var excludeGitignore = require("gulp-exclude-gitignore");
 
-gulp.task("lint", function () {
+function lint() {
   return gulp.src("**/*.js")
     .pipe(excludeGitignore())
     .pipe(eslint({useEslintrc: true}))
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
-});
+}
 
-gulp.task("default", ["lint"]);
+exports.lint = lint;
+exports.default = lint;
