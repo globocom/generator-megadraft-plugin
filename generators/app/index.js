@@ -22,13 +22,16 @@ function isRequired(str) {
   return str.trim().length > 0;
 }
 
-
 module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
-    this.log(yosay(
-      "Welcome to the beautiful " + chalk.red("megadraft-plugin") + " generator!"
-    ));
+    this.log(
+      yosay(
+        "Welcome to the beautiful " +
+          chalk.red("megadraft-plugin") +
+          " generator!"
+      )
+    );
 
     var prompts = [
       {
@@ -36,60 +39,62 @@ module.exports = class extends Generator {
         name: "pluginName",
         message: "What's the plugin display name?",
         default: this.appname,
-        validate: isRequired
+        validate: isRequired,
       },
       {
         type: "input",
         name: "packageName",
         message: "What's the package name?",
-        default: function (props) {
+        default: function(props) {
           return _.kebabCase(props.pluginName);
         },
-        validate: isRequired
+        validate: isRequired,
       },
       {
         type: "input",
         name: "authorName",
         message: "What's the package author name?",
-        validate: isRequired
+        validate: isRequired,
       },
       {
         type: "input",
         name: "authorEmail",
-        message: "What's the package author e-mail?"
+        message: "What's the package author e-mail?",
       },
       {
         type: "input",
         name: "authorHomepage",
         message: "What's the package author homepage?",
-        validate: ensureHttpPrefix
+        validate: ensureHttpPrefix,
       },
       {
         type: "input",
         name: "repositoryURL",
-        message: "What's the git repository URL?"
+        message: "What's the git repository URL?",
       },
       {
         type: "input",
         name: "homepage",
         message: "What's the project homepage?",
-        validate: ensureHttpPrefix
+        validate: ensureHttpPrefix,
       },
       {
         type: "input",
         name: "issuesURL",
         message: "What's the issues URL?",
         validate: ensureHttpPrefix,
-        default: function (props) {
-          return (props.homepage.replace(/\/$/, "") + "/issues");
-        }
-      }
+        default: function(props) {
+          return props.homepage.replace(/\/$/, "") + "/issues";
+        },
+      },
     ];
 
-    return this.prompt(prompts).then(function (props) {
-      // To access props later use this.props.someAnswer;
-      this.inputs = props;
-    }.bind(this));
+    return this.prompt(prompts).then(
+      function(props) {
+        // To access props later use this.props.someAnswer;
+        this.inputs = props;
+      }.bind(this)
+    );
   }
 
   writing() {
@@ -104,14 +109,10 @@ module.exports = class extends Generator {
       inputs: this.inputs,
       info: {
         year: today.getFullYear(),
-        copyrightHolder: copyrightHolder
-      }
+        copyrightHolder: copyrightHolder,
+      },
     };
-    this.fs.copyTpl(
-      this.templatePath(""),
-      this.destinationPath(""),
-      context
-    );
+    this.fs.copyTpl(this.templatePath(""), this.destinationPath(""), context);
     this.fs.move(
       this.destinationPath("_package.json"),
       this.destinationPath("package.json")

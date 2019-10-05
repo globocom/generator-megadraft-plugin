@@ -5,36 +5,34 @@
  */
 
 module.exports = {
-  entry: [
-    "."
-  ],
+  entry: ["."],
   output: {
     path: __dirname + "/dist",
     publicPath: "/dist/",
     filename: "<%= inputs.packageName %>.js",
     library: "<%= inputs.packageName %>",
-    libraryTarget: "umd"
+    libraryTarget: "umd",
   },
   externals: {
-    "megadraft": "Megadraft",
-    "react": "React",
-    "react-dom": "ReactDOM"
+    megadraft: "Megadraft",
+    react: "React",
+    "react-dom": "ReactDOM",
   },
   devtool: "source-map",
   devServer: {
     inline: true,
-    contentBase: "./"
+    contentBase: "./",
   },
   module: {
     loaders: [
       {
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
       },
       {
         test: /\.json$/,
-        loader: "json-loader"
-      }
-    ]
-  }
+        loader: "json-loader",
+      },
+    ],
+  },
 };

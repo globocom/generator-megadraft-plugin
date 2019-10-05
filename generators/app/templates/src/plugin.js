@@ -20,7 +20,7 @@ export default {
     displayOptions: [
       { key: "small", icon: MegadraftIcons.MediaSmallIcon, label: "SMALL" },
       { key: "medium", icon: MegadraftIcons.MediaMediumIcon, label: "MEDIUM" },
-      { key: "big", icon: MegadraftIcons.MediaBigIcon, label: "BIG" }
-    ]
-  }
+      { key: "big", icon: MegadraftIcons.MediaBigIcon, label: "BIG" },
+    ],
+  },
 };

@@ -22,8 +22,8 @@ export default class Block extends Component {
       {
         key: "delete",
         icon: MegadraftIcons.DeleteIcon,
-        action: this.props.container.remove
-      }
+        action: this.props.container.remove,
+      },
     ];
   }
 
