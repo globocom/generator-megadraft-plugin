@@ -14,14 +14,14 @@ describe("Block", function() {
 
   beforeEach(function() {
     data = {
-      caption: "media caption"
+      caption: "media caption",
     };
     updateData = jest.fn();
     const container = {
       updateData,
       setReadOnly: jest.fn(),
       remove: jest.fn(),
-      plugin: jest.fn()
+      plugin: jest.fn(),
     };
 
     const wrapper = mount(
@@ -38,10 +38,10 @@ describe("Block", function() {
   it("updates entity on caption change", function() {
     caption.props().onChange({
       target: {
-        value: "new caption"
-      }
+        value: "new caption",
+      },
     });
-    expect(updateData).toBeCalledWith({ caption: "new caption" });
+    expect(updateData).toHaveBeenCalledWith({ caption: "new caption" });
   });
 
   it("your tests here...", function() {

@@ -45,7 +45,7 @@ gulp.task("dev-server", function(callback) {
   gulp.start("demo-watch");
 
   new WebpackDevServer(webpack(webpackConfig), {
-    stats: { colors: true }
+    stats: { colors: true },
   }).listen(8080, "localhost", function(err) {
     if (err) {
       throw new gutil.PluginError("webpack-dev-server", err);

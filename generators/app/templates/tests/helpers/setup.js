@@ -23,6 +23,7 @@ global.self = global;
  */
 (window => {
   for (let key in window) {
+    // eslint-disable-next-line no-prototype-builtins
     if (!window.hasOwnProperty(key)) {
       continue;
     }

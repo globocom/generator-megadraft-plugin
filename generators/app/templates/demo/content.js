@@ -15,7 +15,7 @@ export default {
       type: "header-two",
       depth: 0,
       inlineStyleRanges: [],
-      entityRanges: []
+      entityRanges: [],
     },
     {
       key: "9vgd",
@@ -25,9 +25,9 @@ export default {
       text: "",
       data: {
         type: constants.PLUGIN_TYPE,
-        caption: "Plugin caption"
+        caption: "Plugin caption",
       },
-      entityRanges: []
+      entityRanges: [],
     },
     {
       key: "6dge",
@@ -35,7 +35,7 @@ export default {
       depth: 0,
       inlineStyleRanges: [],
       text: "",
-      entityRanges: []
-    }
-  ]
+      entityRanges: [],
+    },
+  ],
 };

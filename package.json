@@ -25,15 +25,26 @@
   },
   "devDependencies": {
     "babel-eslint": "^6.1.0",
-    "eslint": "^2.1.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.3.0",
     "eslint-config-xo-space": "^0.13.0",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^5.2.2",
     "gulp": "^3.9.0",
     "gulp-eslint": "^2.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-plumber": "^1.0.0",
+    "husky": "^3.0.8",
+    "lint-staged": "^9.4.1",
+    "prettier": "^1.18.2",
     "yeoman-assert": "^2.0.0",
     "yeoman-test": "^1.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "eslintConfig": {
     "extends": "xo-space"
@@ -41,6 +52,17 @@
   "repository": "https://github.com/globocom/generator-megadraft-plugin",
   "scripts": {
     "lint": "gulp lint"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 80,
+    "trailingComma": "es5",
+    "bracketSpacing": true
   },
   "license": "MIT"
 }
